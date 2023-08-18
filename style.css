@@ -25,6 +25,20 @@ body {
   background-size: cover;
 }
 
+@media (max-width: 1024px) {
+  .header {
+    padding: 64px 72px;
+    background-image: url(/images/header-bg-small.png);    
+  }  
+}
+
+@media (max-width: 576px) {
+  .header {
+    padding: 32px 20px;
+    background-image: 0 0;
+  }  
+}
+
 .header__top {
   display: flex;
   justify-content: space-between;
@@ -40,16 +54,18 @@ body {
   letter-spacing: -1.5px;
 }
 
-@media (max-width: 960px) {
-  .header {
-    padding: 24px 40px;
-  }
+
+@media (max-width: 1024px) {
+  .header__title {
+    font-size: 40px;
+  }  
 }
 
-@media (max-width: 640px) {
+@media (max-width: 576px) {
   .header__title {
     font-size: 32px;
-  }
+    margin-top: 20px;
+  }  
 }
 /* #endregion */
 /* #region menu */
@@ -66,6 +82,19 @@ body {
   transition: transform 500ms;
 }
 
+
+@media (max-width: 1024px) {
+  .menu {
+    padding: 64px 72px;
+  }  
+}
+
+@media (max-width: 576px) {
+  .menu {
+    padding: 32px 20px;
+  }  
+}
+
 .menu:target {
   transform: translateX(-0%);
 }
@@ -76,10 +105,10 @@ body {
   margin-bottom: 64px;
 }
 
-@media (max-width: 960px) {
-  .menu {
-    padding: 40px 60px;
-  }
+@media (max-width: 576px) {
+  .menu__top {
+    margin-bottom: 36px;
+  }  
 }
 /* #endregion */
 /* #region nav */
@@ -98,6 +127,10 @@ body {
   letter-spacing: 2px; 
   text-transform: uppercase;
 }
+
+.nav__link:hover {
+  text-decoration: underline;
+}
 /* #endregion */
 /* #region main */
 .main {
@@ -105,12 +138,18 @@ body {
   background: #fff;
 }
 
-
-@media (max-width: 640px) {
+@media (max-width: 1024px) {
   .main {
-    padding: 40px;;
-  }
+    padding: 120px 72px;
+  }  
 }
+
+@media (max-width: 576px) {
+  .main {
+    padding: 120px 20px;
+  }  
+}
+
 /* #endregion */
 /* #region recommended */
 .recommended {
@@ -127,23 +166,37 @@ body {
   letter-spacing: -1.5px;
 }
 
+@media (max-width: 1024px) {
+  .recommended__title {
+    font-size: 40px;
+  }  
+}
+
+@media (max-width: 576px) {
+  .recommended__title {
+    font-size: 32px;
+  }  
+}
+
 .recommended__products {
   display: flex;
   justify-content: center;
   gap: 24px;
 }
 
-@media (max-width: 640px) {
-  .header__title {
-    font-size: 32px;
+@media (max-width: 1024px) {
+  .recommended__products  {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
-@media (max-width: 640px) {
-  .recommended__title {
-    font-size: 30px;
+@media (max-width: 576px) {
+  .recommended__products  {
+    align-items: stretch;
   }
 }
+
 /* #endregion */
 /* #region product */
 .product {
@@ -190,21 +243,40 @@ body {
   letter-spacing: -1.5px;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 1024px) {
   .categories__title {
-    font-size: 30px;
-  }
+    font-size: 40px;
+  }  
 }
+
+@media (max-width: 576px) {
+  .categories__title {
+    font-size: 32px;
+  }  
+}
+
 /* #endregion */
 /* #region photo */
 
 .photo-wide {
   width: 65%;
+  object-fit: cover;
 }
 
 .photo-square {
   width: 32%;
+  object-fit: cover;
 }
+
+@media (max-width: 576px) {
+  .photo-wide {
+    width: 48.5%;
+  }
+  .photo-square {
+    width: 48.5%;
+  }
+}
+
 /* #endregion */
 /* #region category */
 .category {
@@ -218,8 +290,16 @@ body {
 }
 
 .category__title {
+  font-size: 24px;
   margin: 0;
 }
+
+@media (max-width: 576px) {
+  .category__title {
+    font-size: 16px;
+  }
+}
+
 /* #endregion */
 /* #region how-to-buy */
 .how-to-buy {
@@ -227,6 +307,12 @@ body {
   margin: 0 auto;
   display: flex;
   gap: 24px; 
+}
+
+@media (max-width: 576px) {
+  .how-to-buy {
+    display: block;
+  }
 }
 
 .how-to-buy__title {
@@ -238,6 +324,19 @@ body {
   font-weight: 700;
   line-height: 100%;
   letter-spacing: -1.5px;
+}
+
+@media (max-width: 1024px) {
+  .how-to-buy__title {
+    font-size: 40px;
+  }  
+}
+
+@media (max-width: 576px) {
+  .how-to-buy__title {
+    font-size: 32px;
+    margin-bottom: 32px;
+  }  
 }
 
 .how-to-buy__content {
@@ -255,14 +354,9 @@ body {
   font-weight: 700;
 }
 
-@media (max-width: 640px) {
-  .how-to-buy__title {
-    font-size: 30px;
-  }
-  .how-to-buy__benefits {
-    gap: 8px;
-    margin-bottom: 20px;
-  }
+.how-to-buy__description {
+  margin: 0;
+  line-height: 27px;
 }
 
 /* #endregion */
@@ -276,5 +370,16 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+/* #endregion */
+/* #region logo */
+.logo {
+  height: 24px;
+}
+
+@media (max-width: 576px) {
+  .logo {
+    height: 16px;
+  }
 }
 /* #endregion */
